@@ -15,14 +15,17 @@ interface ServiceProps {
 const Service: FC<ServiceProps> = ({name, url}) => {
 	const [status, setStatus] = useState<ServiceStatus>(ServiceStatus.Idle);
 	const [version, setVersion] = useState<string | null>(null);
+	const [responseTime, setResponseTime] = useState<number | null>(null);
 
 	useEffect(() => {
 		const startTime = Date.now();
+
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
 				setStatus(ServiceStatus.Success);
 				setVersion(response.version);
+				setResponseTime(Date.now() - startTime);
 			})
 			.catch(() => {
 				setStatus(ServiceStatus.Error);
@@ -47,10 +50,12 @@ const Service: FC<ServiceProps> = ({name, url}) => {
 
 	return (
 		<Alert variant={"filled"} severity={severity} sx={{margin: '0.5rem'}}>
-			<AlertTitle>
+			<AlertTitle sx={{fontWeight: "bold"}}>
 				{name} - {statusText}
 			</AlertTitle>
-			Version: {version ?? 'Unknown'}
+			API Version: <b>{version ?? 'Unknown'}</b>
+			<br/>
+			Response Time: <b>{responseTime ? `${responseTime}ms` : 'Unknown'}</b>
 		</Alert>
 	);
 }

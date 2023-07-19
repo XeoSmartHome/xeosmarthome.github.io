@@ -4,7 +4,7 @@ import Service from "../components/Service";
 
 const HomePage = () => {
 	return (
-		<Container sx={{display: 'flex',flexDirection: 'column', justifyContent: 'center', height: '100vh'}}>
+		<Container sx={{padding: '5rem', display: 'flex', flexDirection: 'column'}}>
 			<Typography variant={"h3"} sx={{alignSelf: 'center', marginBottom: '2rem'}}>
 				XeoSmartHome API Status
 			</Typography>
