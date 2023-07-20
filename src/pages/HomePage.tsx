@@ -11,7 +11,7 @@ const HomePage = () => {
 			<Service name={"Auth"} url={"https://api.staging.xeosmarthome.com/auth-service/"}/>
 			<Service name={"Accounts"} url={"https://api.staging.xeosmarthome.com/accounts-service/"}/>
 			<Service name={"Devices"} url={"https://api.staging.xeosmarthome.com/devices-service/"}/>
-			<Service name={"Control Nodes Session Manager"} url={"https://api.staging.xeosmarthome.com/devices-sessions-service/"}/>
+			<Service name={"Control Nodes Sessions"} url={"https://api.staging.xeosmarthome.com/control-nodes-sessions/"}/>
 			<Service name={"Devices Sensors"} url={"https://api.staging.xeosmarthome.com/sensors-service/"}/>
 			<Service name={"Rooms"} url={"https://api.staging.xeosmarthome.com/rooms-service/"}/>
 			<Service name={"Scenes"} url={"https://api.staging.xeosmarthome.com/scenes-service/"}/>
